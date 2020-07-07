@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400&display=swap&effect=anaglyph');
+
+html {
+  background: url('https://source.unsplash.com/featured/?water,ruins') no-repeat center center/cover;
+  background-attachment: fixed;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding:
+    env(safe-area-inset-top)
+    env(safe-area-inset-right)
+    env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
+  width: 100%;
+}
+
+/* Utilities / Components */
+.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
