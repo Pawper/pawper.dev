@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-self: start;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 2;
+  padding: calc(1vmin + 1rem);
+
+  @include respond(tablet-plus) {
+    width: unset;
+      justify-self: center;
+      gap: calc(1vmin + 1rem);
+      display: grid;
+      justify-content: center;
+      place-items: center;
+      grid-auto-flow: row;
+      padding: 0;
+      padding-top:  calc(1vmin + 1rem);
+  }
+  @include respond(desktop) {
+      grid-auto-flow: column;
+  }
+}

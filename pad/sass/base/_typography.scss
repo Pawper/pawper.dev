@@ -1,0 +1,23 @@
+:root {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.title {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 400;
+  @include noSelect;
+  font-size: 4.5rem;
+  line-height: 0;
+
+  @include respond(tablet-plus) {
+      font-size: calc(6rem + 60 * (100vw - 415px) / 1300);
+      line-height: unset;
+  }
+  @include respond(desktop) {
+      font-size: 9.5rem;
+  }
+  @include respond(big-picture) {
+      padding-bottom: 1rem;
+  }
+}

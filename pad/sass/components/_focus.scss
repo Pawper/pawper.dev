@@ -1,0 +1,23 @@
+.c-focus {
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 0px solid white;
+  cursor: pointer;
+  border-radius: calc(1vmin + 0.5rem);
+  box-shadow: none;
+  position: static;
+  text-shadow: var(--outline--dark);
+  @include noSelect;
+  @include respond(tablet-plus) {
+    @include interactiveFocus;
+    &:hover,
+    &:focus {
+      padding: 0 calc(1vmin + 2rem);
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(1.05);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  // This defines what 1rem is
+  font-size: calc(100% * calc(10/#{$browser-context})); /* Default font size is 16px but 1rem = 10px (instead of 16px) is easier to math out in your head; must use % calculation because defining with px breaks accessibility (users can set font size in browser prefs) */
+}
+
+html {
+  box-sizing: border-box;
+  background: url('https://source.unsplash.com/featured/?ocean,ruins') no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+body {
+  padding:
+    env(safe-area-inset-top)
+    env(safe-area-inset-right)
+    env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
+  width: 100%;
+}

@@ -1,18 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <title>Pawper's Pad</title>
+
+    <meta name="description" content="Phillip Wessels's personal site.">
+    <meta name="author" content="Phillip Wessels">
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    <!-- Open Graph http://ogp.me/ -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Pawper's Pad">
+    <meta property="og:url" content="http://pawper.dev/pad">
+    <!-- <meta property="og:image" content="http://fullurl.com/to-this/image.jpg"> -->
+    <meta property="og:site_name" content="Pawper's Pad">
+    <meta property="og:description" content="Phillip Wessels's personal site.">
+    <!-- Twitter Cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pawper">
+    <meta name="twitter:title" content="Pawper's Pad">
+    <meta name="twitter:url" content="http://pawper.dev/pad">
+    <meta name="twitter:description" content="Phillip Wessels's personal site.">
+    <!-- <meta name="twitter:image" content="http://fullurl.com/to-this/image.jpg"> -->
+
+
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400&display=swap&effect=anaglyph"
+        rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    
-    <script src="https://kit.fontawesome.com/edb600a6e3.js" crossorigin="anonymous">
-	</script>
-    
+    <script src="https://kit.fontawesome.com/edb600a6e3.js"></script>
+
 </head>
+
 <body>
-    Hello World
+    <!-- <div class="l-modal-ui">
+    </div> -->
+    <div class="l-viewport-ui">
+        <!-- <input type="checkbox" id="header-close" class="c-close-checkbox">
+        <header class="c-banner">
+            <div class="c-banner__content">
+                <span class="c-banner__text"></span>
+            </div>
+            <label for="header-close" class="c-button c-button--close">
+                <i class="fas fa-times"></i>
+            </label>
+        </header> -->
+        <main class="core-container">
+            <header class="header">
+                <a href="#home" class="c-focus">
+                    <h1 class="title">Pawper's Pad</h1>
+                </a>
+                <input type="checkbox" id="mobile-nav" class="c-nav-checkbox">
+                <nav class="nav">
+                    <label class="nav-backdrop" for="mobile-nav"></label>
+                    <ul class="nav-list">
+                        <li class="nav-list-item">
+                            <a href="#rules" class="nav-list-item-button c-button--dark">
+                                <i class="fas fa-clipboard-check"></i>
+                                Rules
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#discord" class="nav-list-item-button c-button--dark">
+                                <i class="fab fa-discord"></i>
+                                Discord
+                            </a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="#patreon" class="nav-list-item-button c-button--dark">
+                                <i class="fab fa-patreon"></i>
+                                Patreon
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <label for="mobile-nav" class="c-button c-button--nav">
+                    <i class="fas fa-ellipsis-v"></i>
+                </label>
+            </header>
+            <section class="l-content-ui" id="home">
+                <article class="l-content-ui__article">
+                    <p>Hello world! 😍 Hoping to put a blog here someday!</p>
+                    <a class="twitter-timeline" data-theme="dark"
+                        href="https://twitter.com/pawper?ref_src=twsrc%5Etfw">Tweets by pawper</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </article>
+            </section>
+            <section class="l-content-ui closed" id="rules">
+                <article class="l-content-ui__article">
+                    <p>~ Rules go here ~</p>
+                </article>
+            </section>
+            <section class="l-content-ui closed" id="discord">
+                <article class="l-content-ui__article">
+                    <p>The Pawper's Pad Discord is currently by Phillip's invite only.</p>
+                </article>
+            </section>
+            <section class="l-content-ui closed" id="patreon">
+                <article class="l-content-ui__article">
+                    <p>Coming soon - a way to support Phillip's nonsense.</p>
+                </article>
+            </section>
+        </main>
+        <!-- <input type="checkbox" id="footer-close" class="c-close-checkbox">
+        <footer class="c-banner">
+            <div class="c-banner__content">
+                <span class="c-banner__text">
+                </span>
+                <nav class="c-banner__nav">
+                </nav>
+            </div>
+            <label for="footer-close" class="c-button c-button--close">
+                <i class="fas fa-times"></i>
+            </label>
+        </footer> -->
+    </div>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
