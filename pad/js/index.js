@@ -27,6 +27,8 @@ for(let button = 0; button < navButtons.length; button++) {
     for(let section = 0; section < contentSections.length; section++) {
       if (contentSections[section].id == navButtons[button].getAttribute("href").substr(1)) {
         contentSections[section].classList.remove('closed')
+        contentSections[section].scrollTop = 0;
+        window.scrollTop = 0;
         console.log('Opened ' + contentSections[section].id)
       }
     }
