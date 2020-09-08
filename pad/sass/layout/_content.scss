@@ -48,8 +48,34 @@
       }
     }
 
-    & p {
+    & a {
+      @include interactiveFocus;
+      color: white;
+      &:hover {
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+    }
+
+    & h1 {
+      font-size: 4rem;
+    }
+    & h2 {
+      width: 100%;
+      font-size: 3.5rem;
+    }
+    & h3 {
+      width: 100%;
+      font-size: 3rem;
+    }
+
+    & p,
+    & li {
       @include fluidText;
+    }
+
+    & ul {
+      width: 90%;
     }
 
     & p::selection {

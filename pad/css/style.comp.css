@@ -288,50 +288,15 @@ body {
       @media screen and (min-width: 25.9375em) and (orientation: portrait), screen and (min-width: 900px) {
         .l-content-ui__article:last-of-type {
           margin-bottom: 0; } }
-    .l-content-ui__article a {
-      box-shadow: none;
-      transition-duration: 200ms;
-      transition-property: padding, transform, border, border-radius, box-shadow, translate, backdrop-filter;
-      transition-timing-function: ease-out;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      -webkit-transform: translateZ(0) scale(1, 1);
-      transform: translateZ(0);
-      color: white; }
-      .l-content-ui__article a:hover, .l-content-ui__article a:focus {
-        outline: none;
-        transform: scale(1.15);
-        border: 2px solid white;
-        box-shadow: 0px 10px 20px var(--dark);
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(5px);
-        z-index: 1; }
-      .l-content-ui__article a:active {
-        transform: scale(1.1);
-        box-shadow: 0px 5px 10px var(--darker), 0px 5px 10px var(--light) inset;
-        z-index: 1; }
-      .l-content-ui__article a:hover {
-        padding: 1rem;
-        border-radius: 1rem; }
     .l-content-ui__article h1 {
-      font-size: 4rem; }
-    .l-content-ui__article h2 {
-      width: 100%;
-      font-size: 3.5rem; }
-    .l-content-ui__article h3 {
-      width: 100%;
-      font-size: 3rem; }
-    .l-content-ui__article p,
-    .l-content-ui__article li {
+      font-size: 2rem; }
+    .l-content-ui__article p {
       font-size: clamp(1.6rem, calc( 1.6rem + 16 * (100vw - 415px) / 1300), 2.6rem);
       line-height: clamp(calc(1.6rem * 1.5), calc( calc(1.6rem * 1.5) + calc(16 * 1.5) * ( 100vw - 415px ) / 830), calc(2.6rem * 1.7));
       max-width: 44ch; }
       @media screen and (min-width: 25.9375em) and (orientation: portrait), screen and (min-width: 900px) {
-        .l-content-ui__article p,
-        .l-content-ui__article li {
+        .l-content-ui__article p {
           max-width: 66ch; } }
-    .l-content-ui__article ul {
-      width: 90%; }
     .l-content-ui__article p::selection {
       background: var(--light);
       color: black;
