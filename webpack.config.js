@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
+const CopyPlugin = require("copy-webpack-plugin")
 
 const config = {
   entry: './src/index.js',
@@ -18,7 +19,16 @@ const config = {
     contentBase: path.resolve(__dirname, "dist"),
     hot: true,
   },
-  plugins: [new HtmlWebpackPlugin({template: './src/index.html'})],
+  plugins: [
+    new HtmlWebpackPlugin({template: './src/index.html'}),
+    new CopyPlugin({patterns: [
+      {from: "*.txt", to: "../dist/", context: "src/"},
+      {from: "sitemap.xml", to: "../dist/", context: "src"},
+      {from: "index.html", to: "../dist/pad/", context: "src/pad/"},
+      {from: "*.css", to: "../dist/pad/css/", context: "src/pad/css/"},
+      {from: "*.js", to: "../dist/pad/js/", context: "src/pad/js/"}
+    ]})
+  ],
   module: {
     rules: [
       {

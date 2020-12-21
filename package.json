@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Pawper/pawper.dev#readme",
   "devDependencies": {
+    "copy-webpack-plugin": "^7.0.0",
     "node-sass": "^4.14.1",
     "webpack": "^5.11.0",
     "webpack-cli": "^4.2.0",
