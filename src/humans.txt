@@ -1,0 +1,16 @@
+# humanstxt.org
+
+# TEAM
+
+Designer & Developer: Phillip A. Wessels
+Site: https://pawper.dev
+GitHub: https://github.com/Pawper
+Twitter: @pawper
+Location: San Jose, CA. USA
+
+---
+
+# THANKS & ATTRIBUTIONS
+freeCodeCamp https://www.freecodecamp.org/
+Brad Schiff @learnwebcode https://learnwebcode.com/
+- 
