@@ -4,7 +4,30 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
-const CopyPlugin = require("copy-webpack-plugin")
+const fse = require('fs-extra')
+
+class RunAfterCompile {
+  apply(compiler) {
+    compiler.hooks.done.tap('Copy files', function() {
+      fse.copySync('./src/img', './dist/img')
+      fse.copySync('./src/humans.txt', './dist/humans.txt')
+      fse.copySync('./src/robots.txt', './dist/robots.txt')
+      fse.copySync('./src/sitemap.xml', './dist/sitemap.xml')
+      fse.copySync('./src/pad/index.html', './dist/pad/index.html')
+      fse.copySync('./src/pad/css', './dist/pad/css')
+      fse.copySync('./src/pad/js', './dist/pad/js')
+    })
+  }
+}
+
+let pages = fse.readdirSync('./src').filter(function(file) {
+  return file.endsWith('.html')
+}).map(function(page) {
+  return new HtmlWebpackPlugin({
+    filename: page,
+    template: `./src/${page}`
+  })
+})
 
 const config = {
   entry: './src/index.js',
@@ -15,20 +38,15 @@ const config = {
   mode: "development",
   devtool: "eval-cheap-source-map",
   devServer: {
+    before: function(dist, server) {
+      server._watch('./src/**/*.html')
+    },
     port: 8080,
     contentBase: path.resolve(__dirname, "dist"),
     hot: true,
+    watchContentBase: true
   },
-  plugins: [
-    new HtmlWebpackPlugin({template: './src/index.html'}),
-    new CopyPlugin({patterns: [
-      {from: "*.txt", to: "../dist/", context: "src/"},
-      {from: "sitemap.xml", to: "../dist/", context: "src"},
-      {from: "index.html", to: "../dist/pad/", context: "src/pad/"},
-      {from: "*.css", to: "../dist/pad/css/", context: "src/pad/css/"},
-      {from: "*.js", to: "../dist/pad/js/", context: "src/pad/js/"}
-    ]})
-  ],
+  plugins: pages,
   module: {
     rules: [
       {
@@ -58,7 +76,7 @@ const config = {
 if(currentTask == "build") {
   config.mode = "production"
   config.module.rules[0].use[0] = MiniCssExtractPlugin.loader
-  config.plugins.push(new MiniCssExtractPlugin({filename: 'style.[hash].css'}), new CleanWebpackPlugin(), new WebpackManifestPlugin())
+  config.plugins.push(new MiniCssExtractPlugin({filename: 'style.[hash].css'}), new CleanWebpackPlugin(), new WebpackManifestPlugin(), new RunAfterCompile())
 }
 
 module.exports = config

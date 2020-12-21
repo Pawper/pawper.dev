@@ -31,10 +31,79 @@
     <meta name="geo.position" content="37.32564;-121.89571">
     <meta name="ICBM" content="37.32564, -121.89571">
     <!-- Favicon - 260x260 PNG/JPG/SVG then use https://realfavicongenerator.net/ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <h1>Testing Netlify deployment</h1>
+    <!-- USER STORY 6 - #navbar -->
+    <nav id="navbar" class="navbar">
+        <span class="heading">Phillip Wessels</span>
+        <!-- USER STORY 7 - a href="#" -->
+        <div class="navbar__links">
+            <a href="#welcome-section">About</a>
+            <a href="#projects">Work</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    <!-- USER STORY 1 - #welcome-section -->
+    <section id="welcome-section" class="secondary">
+        <img src="img/pwessels.jpg" alt="" class="headshot">
+        <!-- USER STORY 2 - h1 -->
+        <h1 class="title">Phillip Wessels</h1>
+        <ul>
+            <li class="subheading">Web Developer</li>
+            <li class="subheading">Designer</li>
+            <li class="subheading">Artist</li>
+        </ul>
+        <p><span class="hello">Hello world!</span> I created this page for the freeCodeCamp portfolio project, using it
+            to showcase the other freeCodeCamp projects I have designed. Since then, I've taken it forward to showcase my skills. This site is deployed through Netlify using a "serverless" node.js npm build script that bundles my Sass (compiled to CSS) and JavaScript!</p>
+    </section>
+    <!-- USER STORY 3 - #projects -->
+    <section id="projects" class="primary">
+        <i class="fab fa-free-code-camp fcc-icon"></i>
+        <h2>freeCodeCamp Projects</h2>
+        <div class="projects-grid">
+            <!-- USER STORY 4 - .project-tile -->
+            <!-- USER STORY 5 - a -->
+            <a href="https://festive-poitras-126a57.netlify.app/" class="project-tile" target="_blank">
+                <img src="img/tribute.png" alt="">
+                <span class="project-title">Tribute Page</span>
+            </a>
+            <a href="https://flamboyant-euclid-b1cca6.netlify.app/" class="project-tile" target="_blank">
+                <img src="img/survey.png" alt="">
+                <span class="project-title">Survey Form!!</span>
+            </a>
+            <!-- <a href="#" class="project-tile" target="_blank">
+                <img src="img/product.png" alt="">
+                <span class="project-title">Product Landing Page</span>
+            </a> -->
+            <!-- <a href="#" class="project-tile" target="_blank">
+                <img src="img/techdoc.png" alt="">
+                <span class="project-title"> Documentation Page</span>
+            </a> -->
+        </div>
+    </section>
+    <section id="contact" class="secondary">
+        <h2 class="heading">Want to chat?</h2>
+        <span class="subheading">Feel free to reach out.</span>
+        <nav class="contact-links">
+            <!-- USER STORY 8 - #profile-link -->
+            <a id="profile-link" href="https://www.freecodecamp.org/pawper" target="_blank"><i
+                    class="fab fa-free-code-camp"></i> freeCodeCamp</a>
+            <a href="https://github.com/Pawper" target="_blank"><i class="fab fa-github"></i> Github</a>
+            <a href="https://twitter.com/pawper" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        </nav>
+    </section>
+
+    <footer>
+        <span>Originally created for <a href="https://www.freecodecamp.com/" target="_blank">freeCodeCamp <i
+                    class="fab fa-free-code-camp"></i></a> and taken a long way! Thank you freeCodeCamp!</span>
+    </footer>
+
+    <!-- freeCodeCamp testing script -->
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 </body>
 
 </html>
