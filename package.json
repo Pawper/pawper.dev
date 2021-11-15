@@ -23,6 +23,7 @@
     "url": "https://github.com/Pawper/pawper.dev/issues"
   },
   "homepage": "https://github.com/Pawper/pawper.dev#readme",
+  "type": "module",
   "devDependencies": {
     "node-sass": "^4.14.1",
     "webpack": "^5.11.0",
