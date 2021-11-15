@@ -1,3 +1,9 @@
 {
-  "liveServer.settings.port": 5501
+  "vsicons.associations.files": [
+    {
+      "icon": "webpack", 
+      "extensions": ["webpack.config.cjs"], 
+      "filename": true, 
+      "format": "svg"}
+  ]
 }
