@@ -19,7 +19,7 @@ module.exports = {
         loader: "html-loader"
       },
       {
-        test: /\.(png|jpg)$/i,
+        test: /\.webp$/i,
         type: 'asset/resource'
       }
     ]
