@@ -1,5 +1,7 @@
 import './sass/main.scss'
 
-if (module.hot) {
-  module.hot.accept();
+if (process.env.NODE_ENV !== 'production') {
+  if (module.hot) {
+    module.hot.accept();
+  }
 }
