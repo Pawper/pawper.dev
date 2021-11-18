@@ -2,7 +2,11 @@
   "vsicons.associations.files": [
     {
       "icon": "webpack", 
-      "extensions": ["webpack.config.cjs"], 
+      "extensions": [
+        "webpack.common.cjs",
+        "webpack.dev.cjs",
+        "webpack.prod.cjs"
+      ], 
       "filename": true, 
       "format": "svg"}
   ]

@@ -1,8 +1,6 @@
-import fse from 'fs-extra';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import path from 'path'; 
-import { fileURLToPath } from 'url';
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const fse = require('fs-extra');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 let pages = fse.readdirSync('./src')
   .filter(file => file.endsWith('.html'))
@@ -11,7 +9,7 @@ let pages = fse.readdirSync('./src')
     template: `./src/${page}`
   }));
 
-export default {
+module.exports = {
   entry: { main: path.resolve(__dirname, 'src/index.js') },
   plugins: pages,
   module: {

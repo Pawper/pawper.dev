@@ -1,14 +1,11 @@
-import { merge } from 'webpack-merge';
-import common from './webpack.common.js';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-import CopyPlugin from 'copy-webpack-plugin';
-import path from 'path'; 
-import { fileURLToPath } from 'url';
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.cjs');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
-
-export default merge(common, {
+module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   plugins: [
