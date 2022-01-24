@@ -1,6 +1,5 @@
 @import "variables";
-
-@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600;900&family=Signika&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Megrim&family=Signika&display=swap');
 
 body {
   font-family: "Signika", sans-serif;
@@ -8,72 +7,20 @@ body {
   color: $color-white;
 }
 
-h1 {
-  font-size: 6rem;
-}
-h2 {
-  font-size: 4rem;
-}
-h3 {
-  font-size: 3rem;
-}
-h4 {
-  font-size: 2.5rem;
-}
-h5 {
-  font-size: 2rem;
-}
-h6 {
-  font-size: 1.6rem;
-}
-
-.heading {
-  font-family: "Sansita Swashed", cursive;
-  font-weight: 900;
-  text-align: center;
-}
-
-.title {
-  @extend .heading;
-  line-height: 0.8;
-
-  @media only screen and (max-width: $bp-mobile-l) {
-    line-height: 0.8;
-  }
-}
-
-.subheading {
-  @extend h4;
-}
-
-.hello {
-  font-weight: bold;
-  padding-right: 0.5rem;
-  font-size: 1.8rem;
-}
+a { text-decoration: none; }
 
 p {
   max-width: 65ch;
   line-height: 1.6;
-}
-
-.navbar {
-  .heading {
-    font-weight: 600;
-    font-size: 3.5rem;
-    white-space: nowrap;
-
-    @media only screen and (max-width: $bp-mobile-l) {
-      font-size: 2rem;
+  
+  a {  
+    color: $color-secondary-1-4;
+    
+    &:hover {
+      background-image: linear-gradient(115deg, transparent 20%, $color-primary-3 20%, $color-primary-3 80%, transparent 80%);
+      background-position: 0 1.04em;
+      background-repeat: repeat-x;
+      background-size: 10px 2px;
     }
   }
-
-  a {
-    color: $color-white;
-  }
-}
-
-a {
-  color: $color-secondary-1-4;
-  text-decoration: none;
 }

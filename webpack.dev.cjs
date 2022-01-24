@@ -1,4 +1,5 @@
 const { merge } = require('webpack-merge');
+const CspHtmlWebpackPlugin = require('csp-html-webpack-plugin');
 const common = require('./webpack.common.cjs');
 const path = require('path');
 

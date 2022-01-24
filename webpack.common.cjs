@@ -1,6 +1,11 @@
+require('dotenv').config()
 const fse = require('fs-extra');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const { catchAsync } = require('./src/js/webpack/CatchAsync.cjs');
+
+const { generateHtml } = require('./src/js/webpack/GenerateHtml.cjs');
+catchAsync(generateHtml());
 
 let pages = fse.readdirSync('./src')
   .filter(file => file.endsWith('.html'))
@@ -10,17 +15,13 @@ let pages = fse.readdirSync('./src')
   }));
 
 module.exports = {
-  entry: { main: path.resolve(__dirname, 'src/index.js') },
+  entry: { main: path.resolve(__dirname, 'src/js/index.js') },
   plugins: pages,
   module: {
     rules: [
       {
         test: /\.html$/i,
         loader: "html-loader"
-      },
-      {
-        test: /\.webp$/i,
-        type: 'asset/resource'
       }
     ]
   },
@@ -38,7 +39,6 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'img/[hash][ext]',
     clean: true
   }
 };

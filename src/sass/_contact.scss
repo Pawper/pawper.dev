@@ -1,0 +1,165 @@
+#contact {
+    display: grid;
+    place-content: center;
+    @media only screen and (min-width: $bp-tablet-s) {
+        margin: 5rem;
+    }
+}
+
+.contact-form {
+    place-self: center;
+    background-color: $color-secondary-2-0;
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: 
+      "greeting greeting"
+      "message message"
+      ". salutation"
+      ". name"
+      ". email"
+      ". org"
+      "submit submit";
+    padding: 2rem;
+    width: 100vw;
+    max-width: calc(4rem + 65ch);
+    position: relative;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
+        -5px -5px 20px rgba(0, 0, 0, 0.5);
+
+    & > * {
+        position: relative;
+    }
+
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: $color-secondary-1-4;        
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        transform: skewY(5deg);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
+            -5px -5px 20px rgba(0, 0, 0, 0.5);
+
+        @media only screen and (min-width: $bp-tablet-s) {
+            transform: rotate(5deg);
+        }
+    }
+
+    &__greeting {
+        grid-area: greeting;
+    }
+
+    &__message {
+        grid-area: message;        
+        position: relative;
+        
+        textarea {
+            width: 100%;
+            padding-left: 1rem;
+
+            & + label {
+                bottom: unset;
+                top: 0;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: calc(100% - 2.7rem);
+            bottom: 0;
+            pointer-events: none;
+            background-image: radial-gradient(1px 1px at center, $color-complement-3 1px, transparent 1px);
+            background-size: 4px 2rem;
+            background-position: 0px -9px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            border-left: 1px solid $color-primary-2;
+            width: 100%;
+            height: 100%;
+            left: 1rem;
+            top: 0;
+            pointer-events: none;
+        }
+    }
+
+    &__salutation {
+        grid-area: salutation;
+    }
+
+    &__name {
+        grid-area: name;
+    }
+
+    &__email {
+        grid-area: email;
+    }
+
+    &__org {
+        grid-area: org;
+    }
+
+    &__submit {
+        grid-area: submit;
+        width: min-content;
+        place-self: end;
+    }
+}
+
+textarea, input, select {
+    padding: 1rem 0 0 0;
+    border:none;
+    background-image:none;
+    background-color: $color-secondary-2-0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-family: "Signika", sans-serif;
+    font-size: 1.6rem;
+    color: $color-white;
+    width: 100%;
+}
+
+input, select {
+    border-bottom: 2px dotted $color-complement-3;
+}
+
+label {
+    display: block;
+    color: $color-complement-3;
+    background-color: $color-secondary-2-0;
+    position: absolute;
+    bottom: -.75rem;
+    right: 0;
+    z-index: 2;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: .2rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-secondary-1-4;
+    // border-radius: 5rem;
+    color: $color-secondary-1-4;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: .2rem;
+    cursor: pointer;
+
+    &:hover, &:focus-visible {
+        background-color: $color-primary-0;
+
+    }
+}

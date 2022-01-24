@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phillip Wessels • Web Developer & Designer • San Jose, CA, USA</title>
+    <meta name="description"
+        content="Phillip Wessels is a full-stack web developer. Check out his portfolio!">
+    <meta name="author" content="Phillip Wessels">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_CA">
+    <meta property="og:title" content="Phillip Wessels • Web Developer & Designer • San Jose, CA, USA">
+    <meta property="og:url" content="https://pawper.dev/">
+    <!-- <meta property="og:image" content="http://fullurl.com/to-this/image.jpg"> -->
+    <meta property="og:site_name" content="Phillip Wessels">
+    <meta property="og:description"
+        content="Phillip Wessels is a full-stack web developer. Check out his portfolio!">
+    <!-- Twitter Cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pawper">
+    <meta name="twitter:title" content="Phillip Wessels • Web Developer & Designer • San Jose, CA, USA">
+    <meta name="twitter:url" content="https://pawper.dev/">
+    <meta name="twitter:description"
+        content="Phillip Wessels is a full-stack web developer. Check out his portfolio!">
+    <!-- <meta name="twitter:image" content="http://fullurl.com/to-this/image.jpg"> -->
+    <!-- Geotagging & location data https://www.geo-tag.de/generator/en.html -->
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="San Jose">
+    <meta name="geo.position" content="37.32564;-121.89571">
+    <meta name="ICBM" content="37.32564, -121.89571">
+    <!-- Favicon - 260x260 PNG/JPG/SVG then use https://realfavicongenerator.net/ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div id="top"></div>
+    <header class="header">
+        <a href="#top" class="header__name"><h1><span class="first">Phillip</span> <span class="last">Wessels</span></h1></a>
+        <div class="divider"></div>
+        <nav class="navbar">
+            <div class="navbar__links">
+                <a href="https://docs.google.com/document/d/1p7w497ZtfRQYTT3A0xdqwj4tyxUHVQm18D8utu4oxTE/edit?usp=sharing" class="btn btn--nav" target="_blank" rel="noopener"><i class="btn__icon btn__icon--resume fas fa-file-alt"></i> <span class="btn__text">Résumé/CV</span></a>
+                <a href="#contact" class="btn btn--nav"><i class="btn__icon btn__icon--contact fas fa-paper-plane"></i> <span class="btn__text">Contact Me</span></a>
+            </div>
+        </nav>
+        <div class="header__background"></div>
+    </header>
+    <div class="bg"></div>
+    <div class="container">
+        <p class="intro">Hello world! I'm a full-stack developer based in Silicon Valley. There's lots of technologies used in the projects below, but my current favorites are Node, Webpack, SCSS, EJS and Netlify. My dev environment is WSL and VS Code. Please enjoy my portfolio and <a href="#contact">contact me</a> if you're hiring. Thanks!</p>
+        <section class="portfolio">
+            <div class="portfolio__grid">
+                <% projects.forEach(project => { %>
+                    <div href="#" class="project">
+                        <span class="project__title"><%= project.description %></span>
+                        <img class="project__image" src="<%= project.image %>" width="500px" height="299px" alt="A screenshot of the project described as <%= project.description %>.">
+                        <div class="project__options">
+                            <a class="btn" href="<%= project.webURL %>" target="_blank" rel="noopener"><i class="btn__icon fas fa-globe"></i> <span class="btn__text">View Live</span></a>
+                            <a class="btn" href="<%= project.githubURL %>" target="_blank" rel="noopener"><i class="btn__icon fab fa-github"></i> <span class="btn__text btn__text--github">View Code</span></a>
+                            <div class="btn"><i class="btn__icon fas fa-info-circle"></i> <span class="btn__text">View Info</span></div>
+                        </div>
+                        <ul class="project__languages">
+                            <% Object.getOwnPropertyNames(project.languages).forEach(language => { %>
+                                <li class="project__language"><%= language %></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+        <section id="contact">
+            <form name="contact" class="contact-form" netlify>
+                <div class="contact-form__message">
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <div class="contact-form__name">
+                    <input type="name" placeholder="Name" required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="contact-form__email">
+                    <input type="email" placeholder="Email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="contact-form__org">
+                    <input type="text" placeholder="Company/Organization">
+                    <label for="org">Company/Organization</label>
+                </div>
+                <button class="contact-form__submit" type="submit">Send</button>
+            </form>
+        </section>
+        <footer>
+            <span>&copy; Phillip Wessels 2021</span>
+        </footer>
+    </div>
+</body>
+
+</html>

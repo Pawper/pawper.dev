@@ -1,0 +1,85 @@
+.btn {
+    display: flex;
+    padding: 1rem;
+    border-radius: 5rem;
+    color: $color-white;
+    font-size: 3rem;
+    background-color: $color-complement-2;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    transition: all 150ms linear;
+    cursor: pointer;
+
+    &__icon {
+        display: inline-block;
+        place-self: center;
+    }
+
+    &__text {
+        display: block;
+        font-size: 2rem;
+        width: 0;
+        max-width: 0%;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: width 300ms linear;
+        line-height: 1.5;
+    }
+
+    @media only screen and (min-width: $bp-laptop-l) {
+        &:hover, &:focus {
+            transform: scale(1.1);
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 1);
+            transition: all 150ms linear;
+
+            .btn__text {
+                width: 9rem;
+                padding-left: 0.75rem;
+                max-width: 100%;
+
+                &--github {
+                    width: 9.75rem;
+                }
+            }
+        }
+    }
+
+    &--nav {
+        font-size: 2.5rem;
+        position: relative;
+        transition: unset;
+
+        & .btn__icon {
+            width: 3rem;
+            height: 3rem;
+
+            &--contact {
+                transform: translatey(.2rem) scalex(-1);
+            }
+            
+            &--resume {
+                transform: translate(.6rem, -.1rem) skew(0.04turn, -20deg);
+            }
+        }
+    
+        &:not(:last-child)::after {
+            content: '';
+            color: white;
+            width: 1rem;
+            height: 1.45rem;
+            position: absolute;
+            right: -1.1rem;
+            border-bottom: 1px solid white;
+        }
+        
+        @media only screen and (min-width: $bp-laptop-l) {
+            &:hover, &:focus {
+                transform: unset;
+                box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+
+                .btn__text {
+                    width: 11rem;
+                }
+            }
+        }
+    }
+}

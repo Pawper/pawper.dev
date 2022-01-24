@@ -1,0 +1,149 @@
+.portfolio {
+    padding: 2rem;
+
+    @media only screen and (min-width: $bp-tablet-s) {
+        padding: 4rem;
+    }
+
+    &__grid {
+        display: grid;
+        gap: 7rem;
+        justify-content: center;
+
+        @media only screen and (min-width: $bp-tablet-s) {
+            gap: 5rem;
+            grid-auto-flow: row;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        }
+
+        @media only screen and (min-width: $bp-laptop-l) {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 500px));
+        }
+    }
+}
+
+.project {
+    display: grid;
+    position: relative;
+
+    &__title {
+        position: absolute;
+        top: -1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $color-white;
+        width: min-content;
+        white-space: nowrap;
+        text-transform: uppercase;
+        z-index: 1;
+        background-image: linear-gradient(135deg, transparent 1rem, $color-secondary-1-4 1rem calc(100% - 1rem), transparent calc(100% - 1rem));
+        padding: .5rem 2rem;
+        border-radius: 3px;
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+
+        &::before {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            right: 1px;
+            bottom: 1px;
+            background-image: linear-gradient(135deg, transparent 1rem, $color-secondary-2-2 1rem calc(100% - 1rem), transparent calc(100% - 1rem));
+            border-radius: 3px;
+            font-size: large;
+        }
+
+        @media only screen and (min-width: $bp-tablet-s) {
+            font-size: large;
+            transform: unset;
+            left: -1.5rem;
+            padding: 1rem 2rem;
+        }
+
+    }
+
+    &__image {
+        max-width: 100%;
+        grid-area: 1 / -1 / 1 / -1;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
+            -5px -5px 20px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+
+        @media only screen and (min-width: $bp-tablet-s) {
+            margin-left: 1rem;
+        }
+    }
+
+    &__options {
+        grid-area: 1 / -1 / 1 / -1;
+        place-self: end center;
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        position: absolute;
+        bottom: -3.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        
+
+        @media only screen and (min-width: $bp-tablet-s) {
+            flex-direction: column;
+            align-items: flex-start;
+            top: 2.6rem;
+            left: -2.5rem;
+            transform: unset;
+        }
+    }
+
+    &__languages {
+        list-style: none;
+        display: none;
+
+        @media only screen and (min-width: $bp-mobile-m) {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: .5rem;
+            position: absolute;
+            top: 3rem;
+            right: -.5rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: .2rem;
+            align-items: flex-end;
+        }
+
+
+        @media only screen and (min-width: $bp-tablet-s) {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: .5rem;
+            top: unset;
+            bottom: -1rem;
+            right: .5rem;
+        }
+
+    }
+
+    &__language {
+        width: min-content;
+        padding: .5rem;
+        position: relative;
+        z-index: 1;
+        font-style: italic;
+
+        &::after {
+            content: '';
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+            background-color: $color-primary-0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: skew(165deg);
+            z-index: -1;
+            border-radius: 3px;
+        }
+    }
+}
