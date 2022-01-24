@@ -1,34 +1,12 @@
+@import "reveal-item";
 @import "base";
-@import "layout";
+@import "btn";
+@import "footer";
 @import "typography";
 @import "variables";
-
-// Please find below my solutions for the freeCodeCamp requirements
-
-#navbar {
-  // USER STORY 11 - navbar always at top of viewport
-  position: fixed;
-  top: 0;
-  z-index: 2;
-}
-
-#welcome-section {
-  // USER STORY 10 - 100vh
-  min-height: 100vh;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-content: center;
-  gap: 2rem;
-
-  // USER STORY 9 - min 1 media query
-  @media only screen and (max-width: $bp-tablet) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media only screen and (max-width: $bp-mobile-l) {
-    grid-template-columns: 1fr;
-  }
-}
+@import "header";
+@import "nav";
+@import "portfolio";
+@import "bg";
+@import "intro";
+@import "contact";

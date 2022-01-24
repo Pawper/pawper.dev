@@ -1,0 +1,29 @@
+.bg {
+    background-image: 
+        linear-gradient(120deg, transparent 10%, $color-primary-0 10%, $color-primary-0 15%, transparent 15%),
+        linear-gradient(120deg, transparent 23%, $color-primary-0 23%, $color-primary-0 25%, transparent 25%),
+        linear-gradient(120deg, transparent 35%, $color-primary-0 35%, $color-primary-0 36%, transparent 36%),
+        linear-gradient(120deg, transparent 40%, $color-primary-0 40%, $color-primary-0 45%, transparent 45%),
+        linear-gradient(120deg, transparent 55%, $color-primary-0 55%, $color-primary-0 55.5%, transparent 55.5%),
+        linear-gradient(120deg, transparent 70%, $color-primary-0 70%, $color-primary-0 73%, transparent 73%),
+        linear-gradient(120deg, transparent 76%, $color-primary-0 76%, $color-primary-0 77%, transparent 77%),
+        linear-gradient(120deg, transparent 88%, $color-primary-0 88%, $color-primary-0 88.5%, transparent 88.5%),
+        linear-gradient(120deg, transparent 95%, $color-primary-0 95%, $color-primary-0 98%, transparent 98%),
+        linear-gradient(120deg, transparent 5%, $color-secondary-1-0 5%, $color-secondary-1-0 7%, transparent 7%),
+        linear-gradient(120deg, transparent 20%, $color-secondary-1-0 20%, $color-secondary-1-0 21%, transparent 21%),
+        linear-gradient(120deg, transparent 25%, $color-secondary-1-0 25%, $color-secondary-1-0 30%, transparent 30%),
+        linear-gradient(120deg, transparent 37%, $color-secondary-1-0 37%, $color-secondary-1-0 39%, transparent 39%),
+        linear-gradient(120deg, transparent 48%, $color-secondary-1-0 48%, $color-secondary-1-0 51%, transparent 51%),
+        linear-gradient(120deg, transparent 60%, $color-secondary-1-0 60%, $color-secondary-1-0 62%, transparent 62%),
+        linear-gradient(120deg, transparent 69%, $color-secondary-1-0 69%, $color-secondary-1-0 70%, transparent 70%),
+        linear-gradient(120deg, transparent 80%, $color-secondary-1-0 80%, $color-secondary-1-0 85%, transparent 85%),
+        linear-gradient(120deg, transparent 92%, $color-secondary-1-0 92%, $color-secondary-1-0 93%, transparent 93%);
+        bottom:0;
+    opacity:.5;
+    position:fixed;
+    background-size: clamp(1000px, 100vw, 100%) 100vh;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index:-10;
+}

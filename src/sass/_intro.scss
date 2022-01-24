@@ -1,0 +1,26 @@
+.intro {
+    background: $color-secondary-2-0;
+    padding: 1rem 2rem;
+    place-self: center;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        transform: skewY(-5deg);
+        left: 0;
+        background-color: $color-complement-3;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
+            -5px -5px 20px rgba(0, 0, 0, 0.5);
+
+        @media only screen and (min-width: $bp-tablet-s) {
+            transform: rotate(-2.5deg);
+            width: 110%;
+            left: -5%;
+        }
+    }
+}

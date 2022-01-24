@@ -2,6 +2,7 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.cjs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CspHtmlWebpackPlugin = require('csp-html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
@@ -16,6 +17,13 @@ module.exports = merge(common, {
         { from: path.join(__dirname, 'src/robots.txt'), to: path.join(__dirname, 'dist/robots.txt') },
         { from: path.join(__dirname, 'src/sitemap.xml'), to: path.join(__dirname, 'dist/sitemap.xml') }
       ]
+    }),
+    new CspHtmlWebpackPlugin({
+      'default-src': '\'self\'',
+      'script-src': '',
+      'style-src': '\'self\' https://fonts.googleapis.com https://use.fontawesome.com/',
+      'img-src': '\'self\' https://res.cloudinary.com/',
+      'font-src': '\'self\' https://fonts.gstatic.com/ https://use.fontawesome.com/'
     })
   ],
   module: {

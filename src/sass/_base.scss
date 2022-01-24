@@ -1,3 +1,5 @@
+@import "variables";
+
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -13,5 +15,19 @@ html {
 
   body {
     overflow-x: hidden;
+    background: $color-secondary-2-1;
+    color: $color-white;
+    
+    .container {
+      min-height: calc(100vh - 122.5px);
+      display: grid;
+      grid-template-rows: min-content 1fr min-content auto;
+      gap: 3rem;
+      justify-content: center;
+
+      // @media only screen and (min-width: $bp-4k) {
+      //   max-width: 2000px;
+      // }
+    }
   }
 }
