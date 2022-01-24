@@ -1,22 +1,9 @@
-require('dotenv').config()
-const fse = require('fs-extra');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const { catchAsync } = require('./src/js/webpack/CatchAsync.cjs');
-
-const { generateHtml } = require('./src/js/webpack/GenerateHtml.cjs');
-catchAsync(generateHtml());
-
-let pages = fse.readdirSync('./src')
-  .filter(file => file.endsWith('.html'))
-  .map(page => new HtmlWebpackPlugin({
-    filename: page,
-    template: `./src/${page}`
-  }));
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: { main: path.resolve(__dirname, 'src/js/index.js') },
-  plugins: pages,
+  plugins: [new HtmlWebpackPlugin({ filename: 'index.html', template: './dist/index.html' })],
   module: {
     rules: [
       {
@@ -40,5 +27,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true
-  }
+  },
+  stats: { children: true }
 };
