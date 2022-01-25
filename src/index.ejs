@@ -31,8 +31,7 @@
     <meta name="geo.position" content="37.32564;-121.89571">
     <meta name="ICBM" content="37.32564, -121.89571">
     <!-- Favicon - 260x260 PNG/JPG/SVG then use https://realfavicongenerator.net/ -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
 </head>
 
@@ -57,7 +56,7 @@
                 <% projects.forEach(project => { %>
                     <div href="#" class="project">
                         <span class="project__title"><%= project.description %></span>
-                        <img class="project__image" src="<%= project.image %>" width="500px" height="299px" alt="A screenshot of the project described as <%= project.description %>.">
+                        <img class="project__image" src="<%= project.image %>" alt="A screenshot of the project described as <%= project.description %>.">
                         <div class="project__options">
                             <a class="btn" href="<%= project.webURL %>" target="_blank" rel="noopener"><i class="btn__icon fas fa-globe"></i> <span class="btn__text">View Live</span></a>
                             <a class="btn" href="<%= project.githubURL %>" target="_blank" rel="noopener"><i class="btn__icon fab fa-github"></i> <span class="btn__text btn__text--github">View Code</span></a>
