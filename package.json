@@ -4,7 +4,7 @@
   "description": "Personal website",
   "main": "index.js",
   "scripts": {
-    "dev": "node scripts/generateHtml.cjs && webpack serve --open --config webpack.dev.cjs",
+    "dev": "webpack serve --open --config webpack.dev.cjs",
     "build": "node scripts/generateHtml.cjs && webpack --config webpack.prod.cjs"
   },
   "repository": {
