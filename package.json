@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --open --config webpack.dev.cjs",
+    "build-local": "node --trace-warnings scripts/generateHtmlLocal.cjs && webpack --config webpack.prod.cjs",
     "build": "node scripts/generateHtml.cjs && webpack --config webpack.prod.cjs"
   },
   "repository": {
