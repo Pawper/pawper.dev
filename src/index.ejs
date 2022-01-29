@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Phillip Wessels • Web Developer & Designer • San Jose, CA, USA</title>
-    <meta name="description"
-        content="Phillip Wessels is a full-stack web developer. Check out his portfolio!">
+    <meta name="description" content="Phillip Wessels is a full-stack web developer. Check out his portfolio!">
     <meta name="author" content="Phillip Wessels">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_CA">
@@ -15,15 +14,13 @@
     <meta property="og:url" content="https://pawper.dev/">
     <!-- <meta property="og:image" content="http://fullurl.com/to-this/image.jpg"> -->
     <meta property="og:site_name" content="Phillip Wessels">
-    <meta property="og:description"
-        content="Phillip Wessels is a full-stack web developer. Check out his portfolio!">
+    <meta property="og:description" content="Phillip Wessels is a full-stack web developer. Check out his portfolio!">
     <!-- Twitter Cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@pawper">
     <meta name="twitter:title" content="Phillip Wessels • Web Developer & Designer • San Jose, CA, USA">
     <meta name="twitter:url" content="https://pawper.dev/">
-    <meta name="twitter:description"
-        content="Phillip Wessels is a full-stack web developer. Check out his portfolio!">
+    <meta name="twitter:description" content="Phillip Wessels is a full-stack web developer. Check out his portfolio!">
     <!-- <meta name="twitter:image" content="http://fullurl.com/to-this/image.jpg"> -->
     <!-- Geotagging & location data https://www.geo-tag.de/generator/en.html -->
     <meta name="geo.region" content="US-CA">
@@ -31,40 +28,59 @@
     <meta name="geo.position" content="37.32564;-121.89571">
     <meta name="ICBM" content="37.32564, -121.89571">
     <!-- Favicon - 260x260 PNG/JPG/SVG then use https://realfavicongenerator.net/ -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
 </head>
 
 <body>
     <div id="top"></div>
     <header class="header">
-        <a href="#top" class="header__name"><h1><span class="first">Phillip</span> <span class="last">Wessels</span></h1></a>
+        <a href="#top" class="header__name">
+            <h1><span class="first">Phillip</span> <span class="last">Wessels</span></h1>
+        </a>
         <div class="divider"></div>
         <nav class="navbar">
             <div class="navbar__links">
-                <a href="https://docs.google.com/document/d/1p7w497ZtfRQYTT3A0xdqwj4tyxUHVQm18D8utu4oxTE/edit?usp=sharing" class="btn btn--nav" target="_blank" rel="noopener"><i class="btn__icon btn__icon--resume fas fa-file-alt"></i> <span class="btn__text">Résumé/CV</span></a>
-                <a href="#contact" class="btn btn--nav"><i class="btn__icon btn__icon--contact fas fa-paper-plane"></i> <span class="btn__text">Contact Me</span></a>
+                <a href="https://docs.google.com/document/d/1p7w497ZtfRQYTT3A0xdqwj4tyxUHVQm18D8utu4oxTE/edit?usp=sharing"
+                    class="btn btn--nav" target="_blank" rel="noopener"><i
+                        class="btn__icon btn__icon--resume fas fa-file-alt"></i> <span
+                        class="btn__text">Résumé/CV</span></a>
+                <a href="#contact" class="btn btn--nav"><i class="btn__icon btn__icon--contact fas fa-paper-plane"></i>
+                    <span class="btn__text">Contact Me</span></a>
             </div>
         </nav>
         <div class="header__background"></div>
     </header>
     <div class="bg"></div>
     <div class="container">
-        <p class="intro">Hello world! I'm a full-stack developer based in Silicon Valley. There's lots of technologies used in the projects below, but my current favorites are Node, Webpack, SCSS, EJS and Netlify. My dev environment is WSL and VS Code. Please enjoy my portfolio and <a href="#contact">contact me</a> if you're hiring. Thanks!</p>
+        <p class="intro">Hello world! I'm a full-stack developer based in Silicon Valley. There's lots of technologies
+            used in the projects below, but my current favorites are Node, Webpack, SCSS, EJS and Netlify. My dev
+            environment is WSL and VS Code. Please enjoy my portfolio and <a href="#contact">contact me</a> if you're
+            hiring. Thanks!</p>
         <section class="portfolio">
             <div class="portfolio__grid">
-                <% projects.forEach(project => { %>
+                <% projects.forEach(project=> { %>
                     <div href="#" class="project">
-                        <span class="project__title"><%= project.description %></span>
-                        <img class="project__image" src="<%= project.image %>" alt="A screenshot of the project described as <%= project.description %>.">
+                        <span class="project__title">
+                            <%= project.description %>
+                        </span>
+                        <img class="project__image" src="<%= project.image %>"
+                            alt="A screenshot of the project described as <%= project.description %>.">
                         <div class="project__options">
-                            <a class="btn" href="<%= project.webURL %>" target="_blank" rel="noopener"><i class="btn__icon fas fa-globe"></i> <span class="btn__text">View Live</span></a>
-                            <a class="btn" href="<%= project.githubURL %>" target="_blank" rel="noopener"><i class="btn__icon fab fa-github"></i> <span class="btn__text btn__text--github">View Code</span></a>
-                            <div class="btn"><i class="btn__icon fas fa-info-circle"></i> <span class="btn__text">View Info</span></div>
+                            <a class="btn" href="<%= project.webURL %>" target="_blank" rel="noopener"><i
+                                    class="btn__icon fas fa-globe"></i> <span class="btn__text">View Live</span></a>
+                            <a class="btn" href="<%= project.githubURL %>" target="_blank" rel="noopener"><i
+                                    class="btn__icon fab fa-github"></i> <span class="btn__text btn__text--github">View
+                                    Code</span></a>
+                            <button class="btn" id="<%= project.name %>-open"><i class="btn__icon fas fa-info-circle"></i> <span class="btn__text">View
+                                    Info</span></button>
                         </div>
                         <ul class="project__languages">
-                            <% Object.getOwnPropertyNames(project.languages).forEach(language => { %>
-                                <li class="project__language"><%= language %></li>
+                            <% Object.getOwnPropertyNames(project.languages).forEach(language=> { %>
+                                <li class="project__language">
+                                    <%= language %>
+                                </li>
                             <% }) %>
                         </ul>
                     </div>
@@ -96,6 +112,54 @@
             <span>&copy; Phillip Wessels 2021</span>
         </footer>
     </div>
+
+    <% projects.forEach(project=> { %>
+
+        <div id="<%= project.name %>" class="dialog info" role="dialog" aria-labelledby="<%= project.name %>-title" aria-describedby="<%= project.name %>-text">
+            <div class="dialog__window project-info">
+                <h1 id="<%= project.name %>-title" class="project-info__title"><%= project.description %></h1>
+                <div id="<%= project.name %>-text" class="project-info__text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod delectus molestiae doloribus! Consequatur debitis eius, adipisci quibusdam sint quis quae quo mollitia ad. Ipsam voluptate tenetur quis iste ex eveniet unde veritatis laborum maiores aliquam qui vitae obcaecati iusto odio voluptatum, accusamus facilis pariatur placeat incidunt quasi voluptatibus nobis! Voluptate consectetur neque, maxime cupiditate adipisci et, velit assumenda placeat perferendis ullam, saepe rerum quae est. Molestiae voluptatum accusamus et natus fuga enim iusto ipsam temporibus excepturi cupiditate pariatur fugiat velit aspernatur cumque accusantium inventore quidem asperiores tempora assumenda numquam illo voluptates, at sunt delectus. Sequi, ad reiciendis! Odio, alias?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod delectus molestiae doloribus! Consequatur debitis eius, adipisci quibusdam sint quis quae quo mollitia ad. Ipsam voluptate tenetur quis iste ex eveniet unde veritatis laborum maiores aliquam qui vitae obcaecati iusto odio voluptatum, accusamus facilis pariatur placeat incidunt quasi voluptatibus nobis! Voluptate consectetur neque, maxime cupiditate adipisci et, velit assumenda placeat perferendis ullam, saepe rerum quae est. Molestiae voluptatum accusamus et natus fuga enim iusto ipsam temporibus excepturi cupiditate pariatur fugiat velit aspernatur cumque accusantium inventore quidem asperiores tempora assumenda numquam illo voluptates, at sunt delectus. Sequi, ad reiciendis! Odio, alias?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod delectus molestiae doloribus! Consequatur debitis eius, adipisci quibusdam sint quis quae quo mollitia ad. Ipsam voluptate tenetur quis iste ex eveniet unde veritatis laborum maiores aliquam qui vitae obcaecati iusto odio voluptatum, accusamus facilis pariatur placeat incidunt quasi voluptatibus nobis! Voluptate consectetur neque, maxime cupiditate adipisci et, velit assumenda placeat perferendis ullam, saepe rerum quae est. Molestiae voluptatum accusamus et natus fuga enim iusto ipsam temporibus excepturi cupiditate pariatur fugiat velit aspernatur cumque accusantium inventore quidem asperiores tempora assumenda numquam illo voluptates, at sunt delectus. Sequi, ad reiciendis! Odio, alias?</p>
+                </div>
+                <div class="project-info__sidebar">
+                    <div class="project-info__languages">
+                        <h2>Languages</h2>
+                        <span class="project-info__languages__bar">
+                            <% Object.getOwnPropertyNames(project.languages).forEach(language=> { %>
+                                <span class="project-info__languages__bar__item" aria-label="<%= language %> <%= project.languages[language] %>" style="background-color: <%= project.languages[language]['color'] %>; width: <%= project.languages[language]['percent'] %>%;"></span>
+                            <% }) %>
+                        </span>
+                        <ul class="project-info__languages">
+                            <% Object.getOwnPropertyNames(project.languages).forEach(language=> { %>
+                                <li>
+                                    <a href="https://github.com/Pawper/<%= project.name %>/search?l=<%= language %>" class="project-info__languages__link"><div class="project-info__languages__dot" style="background-color: <%= project.languages[language]['color'] %>;"></div><span class="project-info__languages__name"><%= language %></span> <span class="project-info__languages__percent"><%= project.languages[language]['percent'] %>%</span></a>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </div>
+
+                    <% if (project.topics.length > 0) { %> 
+                        <div class="project-info__tech">
+                            <h2>Technologies</h2>
+                            <ul class="project-info__languages">
+                                <% project.topics.forEach(topic => { %>
+                                    <li><a href="https://github.com/search?q=repo%3Apawper%2F<%= project.name %>+<%= topic %>&type=code "><%= topic %></a></li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    <% } %>
+
+                </div>
+
+                <button class="dialog__close btn" aria-label="close"><i class="btn__icon fas fa-times"></i></button>
+            </div>
+        </div>
+        
+        <% }) %>
+        
+    <div class="modal-backdrop"></div>
 </body>
 
 </html>

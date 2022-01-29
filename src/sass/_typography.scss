@@ -12,7 +12,13 @@ a { text-decoration: none; }
 p {
   max-width: 65ch;
   line-height: 1.6;
-  
+
+  &:not(:first-child) {
+    padding-top: 1rem;
+  }
+}
+
+p, .dialog {
   a {  
     color: $color-secondary-1-4;
     
