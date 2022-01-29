@@ -1,0 +1,51 @@
+.dialog {
+    display: none;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+
+    &.opened {
+        display: grid;
+    }
+
+    &__window {
+        pointer-events: auto;
+        display: block;
+        place-self: center;
+        background-color: $color-secondary-2-0;
+        padding: 1rem 2rem;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
+            -5px -5px 20px rgba(0, 0, 0, 0.5);
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: $color-primary-4;        
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transform: skewY(5deg);
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
+                -5px -5px 20px rgba(0, 0, 0, 0.5);
+        
+            @media only screen and (min-width: $bp-tablet-s) {
+                transform: rotate(3deg);
+                width: 100%;
+            }
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: -.5rem;
+        right: -8rem;
+    }
+}

@@ -111,55 +111,56 @@
         width: min-content;
         place-self: end;
     }
-}
 
-textarea, input, select {
-    padding: 1rem 0 0 0;
-    border:none;
-    background-image:none;
-    background-color: $color-secondary-2-0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    font-family: "Signika", sans-serif;
-    font-size: 1.6rem;
-    color: $color-white;
-    width: 100%;
-}
-
-input, select {
-    border-bottom: 2px dotted $color-complement-3;
-}
-
-label {
-    display: block;
-    color: $color-complement-3;
-    background-color: $color-secondary-2-0;
-    position: absolute;
-    bottom: -.75rem;
-    right: 0;
-    z-index: 2;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: .2rem;
-}
-
-button {
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid $color-secondary-1-4;
-    // border-radius: 5rem;
-    color: $color-secondary-1-4;
-    text-transform: uppercase;
-    font-size: 1.6rem;
-    letter-spacing: .2rem;
-    cursor: pointer;
-
-    &:hover, &:focus-visible {
-        background-color: $color-primary-0;
-
+    textarea, input, select {
+        padding: 1rem 0 0 0;
+        border:none;
+        background-image:none;
+        background-color: $color-secondary-2-0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        font-family: "Signika", sans-serif;
+        font-size: 1.6rem;
+        color: $color-white;
+        width: 100%;
+    }
+    
+    input, select {
+        border-bottom: 2px dotted $color-complement-3;
+    }
+    
+    label {
+        display: block;
+        color: $color-complement-3;
+        background-color: $color-secondary-2-0;
+        position: absolute;
+        bottom: -.75rem;
+        right: 0;
+        z-index: 2;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: .2rem;
+    }
+    
+    button {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: transparent;
+        border: none;
+        font-family: inherit;
+        border-bottom: 1px solid $color-secondary-1-4;
+        // border-radius: 5rem;
+        color: $color-secondary-1-4;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        letter-spacing: .2rem;
+        cursor: pointer;
+    
+        &:hover, &:focus-visible {
+            background-color: $color-primary-0;
+    
+        }
     }
 }

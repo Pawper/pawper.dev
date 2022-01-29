@@ -2,6 +2,8 @@
     display: flex;
     padding: 1rem;
     border-radius: 5rem;
+    border: none;
+    font-family: inherit;
     color: $color-white;
     font-size: 3rem;
     background-color: $color-complement-2;
@@ -12,6 +14,8 @@
     &__icon {
         display: inline-block;
         place-self: center;
+        width: 3rem;
+        height: 3rem;
     }
 
     &__text {
@@ -49,8 +53,6 @@
         transition: unset;
 
         & .btn__icon {
-            width: 3rem;
-            height: 3rem;
 
             &--contact {
                 transform: translatey(.2rem) scalex(-1);
