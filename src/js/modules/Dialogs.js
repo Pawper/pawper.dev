@@ -17,6 +17,7 @@ class OpenDialogs {
             this.dialogMask = document.querySelector('.modal-backdrop');
             this.dialogWindow = dialog.querySelector('.dialog__window');
             this.openButton = document.getElementById(`${this.dialogId}-open`);
+            this.imageOpen = document.getElementById(`${this.dialogId}-image`);
             this.closeButton = dialog.querySelector('.dialog__close');
             this.scrollbarWidth = '';
             this.getScrollbarWidth();
@@ -26,6 +27,7 @@ class OpenDialogs {
 
         events() {
             this.openButton.addEventListener('click', () => this.openDialog());
+            this.imageOpen.addEventListener('click', () => this.openDialog());
             document.addEventListener('keydown', event => this.checkCloseKey(event));
             this.dialogMask.addEventListener('click', () => this.closeDialog());
             this.closeButton.addEventListener('click', () => this.closeDialog());
