@@ -47,6 +47,7 @@ class OpenDialogs {
 
         openDialog() {
             this.makePageInert();
+            this.getScrollbarWidth();
             document.body.style = `overflow-y:hidden; position: relative; padding-right: ${this.scrollbarWidth};`;
             document.querySelector('.bg').style = `background-size: clamp(1000px, 100vw, 100%) 100vh;`
             this.dialogMask.classList.add('active');
