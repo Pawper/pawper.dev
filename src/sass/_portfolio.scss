@@ -70,6 +70,10 @@
             -5px -5px 20px rgba(0, 0, 0, 0.5);
         cursor: pointer;
 
+        &:hover {
+            outline: 1px solid white;
+        }
+
         @media only screen and (min-width: $bp-tablet) {
             margin-left: 1rem;
         }

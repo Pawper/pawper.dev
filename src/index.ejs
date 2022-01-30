@@ -65,7 +65,7 @@
                         <span class="project__title">
                             <%= project.description %>
                         </span>
-                        <img class="project__image" src="<%= project.image %>"
+                        <img id="<%= project.name %>-image" class="project__image" src="<%= project.image %>"
                             alt="A screenshot of the project described as <%= project.description %>.">
                         <div class="project__options">
                             <a class="btn" href="<%= project.webURL %>" target="_blank" rel="noopener"><i
@@ -118,9 +118,11 @@
         <div id="<%= project.name %>" class="dialog info" role="dialog" aria-labelledby="<%= project.name %>-title" aria-describedby="<%= project.name %>-text">
             <div class="dialog__window project-info">
                 <h1 id="<%= project.name %>-title" class="project-info__title"><%= project.description %></h1>
-                <div id="<%= project.name %>-text" class="project-info__text">
-                    <%- project.readme %>
-                </div>
+                <% if (project.readme ) { %> 
+                    <div id="<%= project.name %>-text" class="project-info__text">
+                        <%- project.readme %>
+                    </div>
+                <% } %> 
                 <div class="project-info__sidebar">
                     <img class="project-info__image" src="<%= project.image %>"
                             alt="A screenshot of the project described as <%= project.description %>.">
