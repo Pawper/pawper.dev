@@ -15,37 +15,42 @@
     &__window {
         pointer-events: auto;
         display: block;
-        place-self: center;
         background-color: $color-secondary-2-0;
         padding: 1rem 2rem;
         box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
             -5px -5px 20px rgba(0, 0, 0, 0.5);
         position: relative;
 
+        @media only screen and (min-width: $bp-tablet) {
+            place-self: center;
+        }
+
         &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            background-color: $color-primary-4;        
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            transform: skewY(5deg);
-            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
-                -5px -5px 20px rgba(0, 0, 0, 0.5);
         
-            @media only screen and (min-width: $bp-tablet-s) {
-                transform: rotate(3deg);
+            @media only screen and (min-width: $bp-tablet) {
+                content: '';
+                display: block;
+                position: absolute;
+                background-color: $color-primary-3;        
+                height: 100%;
                 width: 100%;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
+                    -5px -5px 20px rgba(0, 0, 0, 0.5);
+                transform: rotate(-2deg);
             }
         }
     }
 
     &__close {
-        position: absolute;
-        top: -.5rem;
-        right: -8rem;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+
+        @media only screen and (min-width: $bp-tablet) {
+            position: absolute;
+        }
     }
 }

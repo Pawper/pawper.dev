@@ -17,7 +17,7 @@
         box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
             -5px -5px 20px rgba(0, 0, 0, 0.5);
 
-        @media only screen and (min-width: $bp-tablet-s) {
+        @media only screen and (min-width: $bp-tablet) {
             transform: rotate(-2.5deg);
             width: 110%;
             left: -5%;

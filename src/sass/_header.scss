@@ -7,7 +7,7 @@
     align-items: center;
     padding: 1rem;
 
-    @media only screen and (min-width: $bp-tablet-s) {
+    @media only screen and (min-width: $bp-tablet) {
         padding: 3.75rem 3rem 3.5rem 3rem;
     }
 
@@ -22,7 +22,7 @@
         opacity: 0;
         transition: opacity 300ms;
         
-        @media only screen and (min-width: $bp-tablet-s) {
+        @media only screen and (min-width: $bp-tablet) {
             height: 12rem;
         }
     }
@@ -39,14 +39,14 @@
         font-family: "Megrim", cursive;
         white-space: nowrap;
         line-height: 1;
-        @media only screen and (min-width: $bp-tablet-s) {
+        @media only screen and (min-width: $bp-tablet) {
             margin: -3rem 0 -3rem -1rem;
         }
 
         h1 {
             font-size: 3rem;
 
-            @media only screen and (min-width: $bp-tablet-s) {
+            @media only screen and (min-width: $bp-tablet) {
                 font-size: 6rem;
             }
         }
@@ -61,7 +61,7 @@
                 vertical-align: middle;
                 color: $color-secondary-1-4;
 
-                @media only screen and (min-width: $bp-tablet-s) {
+                @media only screen and (min-width: $bp-tablet) {
                     font-size: 10rem;
                 }
             }

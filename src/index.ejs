@@ -119,11 +119,11 @@
             <div class="dialog__window project-info">
                 <h1 id="<%= project.name %>-title" class="project-info__title"><%= project.description %></h1>
                 <div id="<%= project.name %>-text" class="project-info__text">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod delectus molestiae doloribus! Consequatur debitis eius, adipisci quibusdam sint quis quae quo mollitia ad. Ipsam voluptate tenetur quis iste ex eveniet unde veritatis laborum maiores aliquam qui vitae obcaecati iusto odio voluptatum, accusamus facilis pariatur placeat incidunt quasi voluptatibus nobis! Voluptate consectetur neque, maxime cupiditate adipisci et, velit assumenda placeat perferendis ullam, saepe rerum quae est. Molestiae voluptatum accusamus et natus fuga enim iusto ipsam temporibus excepturi cupiditate pariatur fugiat velit aspernatur cumque accusantium inventore quidem asperiores tempora assumenda numquam illo voluptates, at sunt delectus. Sequi, ad reiciendis! Odio, alias?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod delectus molestiae doloribus! Consequatur debitis eius, adipisci quibusdam sint quis quae quo mollitia ad. Ipsam voluptate tenetur quis iste ex eveniet unde veritatis laborum maiores aliquam qui vitae obcaecati iusto odio voluptatum, accusamus facilis pariatur placeat incidunt quasi voluptatibus nobis! Voluptate consectetur neque, maxime cupiditate adipisci et, velit assumenda placeat perferendis ullam, saepe rerum quae est. Molestiae voluptatum accusamus et natus fuga enim iusto ipsam temporibus excepturi cupiditate pariatur fugiat velit aspernatur cumque accusantium inventore quidem asperiores tempora assumenda numquam illo voluptates, at sunt delectus. Sequi, ad reiciendis! Odio, alias?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quod delectus molestiae doloribus! Consequatur debitis eius, adipisci quibusdam sint quis quae quo mollitia ad. Ipsam voluptate tenetur quis iste ex eveniet unde veritatis laborum maiores aliquam qui vitae obcaecati iusto odio voluptatum, accusamus facilis pariatur placeat incidunt quasi voluptatibus nobis! Voluptate consectetur neque, maxime cupiditate adipisci et, velit assumenda placeat perferendis ullam, saepe rerum quae est. Molestiae voluptatum accusamus et natus fuga enim iusto ipsam temporibus excepturi cupiditate pariatur fugiat velit aspernatur cumque accusantium inventore quidem asperiores tempora assumenda numquam illo voluptates, at sunt delectus. Sequi, ad reiciendis! Odio, alias?</p>
+                    <%- project.readme %>
                 </div>
                 <div class="project-info__sidebar">
+                    <img class="project-info__image" src="<%= project.image %>"
+                            alt="A screenshot of the project described as <%= project.description %>.">
                     <div class="project-info__languages">
                         <h2>Languages</h2>
                         <span class="project-info__languages__bar">
@@ -134,7 +134,7 @@
                         <ul class="project-info__languages">
                             <% Object.getOwnPropertyNames(project.languages).forEach(language=> { %>
                                 <li>
-                                    <a href="https://github.com/Pawper/<%= project.name %>/search?l=<%= language %>" class="project-info__languages__link"><div class="project-info__languages__dot" style="background-color: <%= project.languages[language]['color'] %>;"></div><span class="project-info__languages__name"><%= language %></span> <span class="project-info__languages__percent"><%= project.languages[language]['percent'] %>%</span></a>
+                                    <a href="https://github.com/Pawper/<%= project.name %>/search?l=<%= language %>" class="project-info__languages__link" target="_blank" rel="noopener"><div class="project-info__languages__dot" style="background-color: <%= project.languages[language]['color'] %>;"></div><span class="project-info__languages__name"><%= language %></span> <span class="project-info__languages__percent"><%= project.languages[language]['percent'] %>%</span></a>
                                 </li>
                             <% }) %>
                         </ul>
@@ -145,11 +145,19 @@
                             <h2>Technologies</h2>
                             <ul class="project-info__languages">
                                 <% project.topics.forEach(topic => { %>
-                                    <li><a href="https://github.com/search?q=repo%3Apawper%2F<%= project.name %>+<%= topic %>&type=code "><%= topic %></a></li>
+                                    <li><a href="https://github.com/search?q=repo%3Apawper%2F<%= project.name %>+<%= topic %>&type=code" target="_blank" rel="noopener"><%= topic %></a></li>
                                 <% }) %>
                             </ul>
                         </div>
                     <% } %>
+
+                    <div class="project-info__links">
+                        <a href="<%= project.webURL %>" target="_blank" rel="noopener"><i
+                            class="fas fa-globe"></i>View Site</i></a>
+                        <a href="<%= project.githubURL %>" target="_blank" rel="noopener"><i
+                            class="fab fa-github"></i>View
+                            Code on Github</i></a>
+                    </div>
 
                 </div>
 
