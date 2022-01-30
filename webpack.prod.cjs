@@ -18,13 +18,13 @@ module.exports = merge(common, {
         { from: path.join(__dirname, 'src/sitemap.xml'), to: path.join(__dirname, 'dist/sitemap.xml') }
       ]
     }),
-    new CspHtmlWebpackPlugin({
-      'default-src': '\'self\'',
-      'script-src': '',
-      'style-src': '\'self\' https://fonts.googleapis.com https://use.fontawesome.com/',
-      'img-src': '\'self\' https://res.cloudinary.com/',
-      'font-src': '\'self\' https://fonts.gstatic.com/ https://use.fontawesome.com/'
-    })
+    // new CspHtmlWebpackPlugin({
+    //   'default-src': '\'self\'',
+    //   'script-src': '',
+    //   'style-src': '\'self\' https://fonts.googleapis.com https://use.fontawesome.com/',
+    //   'img-src': '\'self\' https://res.cloudinary.com/',
+    //   'font-src': '\'self\' https://fonts.gstatic.com/ https://use.fontawesome.com/'
+    // })
   ],
   module: {
     rules: [
