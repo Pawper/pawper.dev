@@ -36,7 +36,6 @@ class OpenDialogs {
             scrollDiv.className = "scrollbar-measure";
             document.body.appendChild(scrollDiv);
             this.scrollbarWidth = (window.innerWidth - document.body.clientWidth) + 'px';
-            console.log(this.scrollbarWidth);
             document.body.removeChild(scrollDiv);
         }
 
@@ -46,9 +45,7 @@ class OpenDialogs {
 
         openDialog() {
             this.makePageInert();
-            this.getScrollbarWidth();
             document.body.style = `overflow-y:hidden; position: relative; padding-right: ${this.scrollbarWidth};`;
-            // document.body.style = `overflow-y:hidden; position: relative;`;
             document.querySelector('.bg').style = `background-size: clamp(1000px, 100vw, 100%) 100vh;`
             this.dialogMask.classList.add('active');
             this.dialog.classList.add('opened');

@@ -48,6 +48,19 @@ exports.getPortfolioData = async function () {
             topics = topics.data.names.filter(topic => topic !== 'portfolio-project')
             project.topics = topics;
 
+            try {
+                const { data } = await octokit.rest.repos.getReadme({
+                    mediaType: {
+                      format: "html",
+                    },
+                    owner: "pawper",
+                    repo: project.name
+                });
+                project.readme = data;
+            } catch(e) {
+                console.log(e);
+            }
+
             let image = await getProjectImage(project.webURL, project.name);
             project.image = image;
 
