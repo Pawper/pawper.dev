@@ -76,10 +76,15 @@
                             <button class="btn" id="<%= project.name %>-open"><i class="btn__icon fas fa-info-circle"></i> <span class="btn__text">View
                                     Info</span></button>
                         </div>
-                        <ul class="project__languages">
+                        <ul class="project__tags">
                             <% Object.getOwnPropertyNames(project.languages).forEach(language=> { %>
                                 <li class="project__language">
                                     <%= language %>
+                                </li>
+                            <% }) %>
+                            <% project.topics.forEach(topic => { %>
+                                <li class="project__topic">
+                                    <%= topic %>
                                 </li>
                             <% }) %>
                         </ul>

@@ -2,72 +2,83 @@
     padding: 2rem;
 
     @media only screen and (min-width: $bp-tablet) {
-        padding: 4rem;
+        padding: 5rem;
     }
 
     &__grid {
         display: grid;
-        gap: 7rem;
-        justify-content: center;
+        gap: 5rem;
 
         @media only screen and (min-width: $bp-tablet) {
-            gap: 5rem;
             grid-auto-flow: row;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
         }
 
         @media only screen and (min-width: $bp-laptop-l) {
-            grid-template-columns: repeat(auto-fit, minmax(350px, 500px));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            justify-content: center;
         }
     }
 }
 
 .project {
     display: grid;
+    grid-template-areas:
+        "title"
+        "tags"
+        "image"
+        "options";
+    grid-template-rows: repeat(2, min-content) 1fr;
+    justify-items: center;
     position: relative;
 
-    &__title {
+    @media only screen and (min-width: $bp-tablet) {
+        grid-template-areas:
+            "title title tags"
+            "options . .";
+        grid-template-columns: repeat(2, min-content) 1fr;
+        grid-template-rows: 5rem 1fr;
+        justify-items: start;
+    }
+
+    &::after {
+        content: "";
+        background-color: $color-secondary-2-0;
         position: absolute;
-        top: -1.5rem;
-        left: 50%;
-        transform: translateX(-50%);
+        z-index: -2;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5), -5px -5px 20px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+
+        @media only screen and (min-width: $bp-tablet) {
+            width: calc(100% - 3.5rem);
+            height: calc(100% - 5rem);
+        }
+    }
+
+    &__title {
+        grid-area: title;
         color: $color-white;
         width: min-content;
         white-space: nowrap;
         text-transform: uppercase;
         z-index: 1;
-        background-image: linear-gradient(135deg, transparent 1rem, $color-secondary-1-4 1rem calc(100% - 1rem), transparent calc(100% - 1rem));
-        padding: .5rem 2rem;
+        font-size: large;
+        padding: 1rem 2rem;
         border-radius: 3px;
         filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+        align-self: center;
 
-        &::before {
-            z-index: -1;
-            content: "";
-            position: absolute;
-            left: 1px;
-            top: 1px;
-            right: 1px;
-            bottom: 1px;
-            background-image: linear-gradient(135deg, transparent 1rem, $color-secondary-2-2 1rem calc(100% - 1rem), transparent calc(100% - 1rem));
-            border-radius: 3px;
-            font-size: large;
+        @media only screen and (min-width: $bp-tablet-s) {
+            justify-content: start;
         }
-
-        @media only screen and (min-width: $bp-tablet) {
-            font-size: large;
-            transform: unset;
-            left: -1.5rem;
-            padding: 1rem 2rem;
-        }
-
     }
 
     &__image {
-        max-width: 100%;
-        grid-area: 1 / -1 / 1 / -1;
-        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
-            -5px -5px 20px rgba(0, 0, 0, 0.5);
+        grid-area: image;
+        width: calc(100% + 2rem);
+        margin: 1rem -1rem;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5), -5px -5px 20px rgba(0, 0, 0, 0.5);
         cursor: pointer;
 
         &:hover {
@@ -75,71 +86,65 @@
         }
 
         @media only screen and (min-width: $bp-tablet) {
-            margin-left: 1rem;
+            grid-area: 1 / 1 / -1 / -1;
+            max-width: calc(100% - 3.5rem);
+            margin: 5rem 0 0 3.5rem;
         }
     }
 
     &__options {
-        grid-area: 1 / -1 / 1 / -1;
-        place-self: end center;
+        grid-area: options;
         display: flex;
         gap: 1rem;
-        padding: 1rem;
-        position: absolute;
-        bottom: -3.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        
+        align-self: start;
+        margin-top: -3.75rem;
+        padding-bottom: 1rem;
 
         @media only screen and (min-width: $bp-tablet) {
             flex-direction: column;
             align-items: flex-start;
-            top: 2.6rem;
-            left: -2.5rem;
-            transform: unset;
+            padding: 2rem 1rem;
+            margin: 0;
+
         }
     }
 
-    &__languages {
+    &__tags {
+        grid-area: tags;
         list-style: none;
-        display: none;
-
-        @media only screen and (min-width: $bp-mobile-m) {
-            display: flex;
-            flex-direction: column-reverse;
-            gap: .5rem;
-            position: absolute;
-            top: 3rem;
-            right: -.5rem;
-            text-transform: uppercase;
-            font-size: 1rem;
-            letter-spacing: .2rem;
-            align-items: flex-end;
-        }
-
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+        padding: 0 0.5rem;
+        margin-bottom: -2rem;
+        justify-content: center;
 
         @media only screen and (min-width: $bp-tablet) {
             display: flex;
-            flex-direction: row-reverse;
-            gap: .5rem;
-            top: unset;
-            bottom: -1rem;
-            right: .5rem;
+            flex-direction: row;
+            gap: 0.5rem;
+            align-self: start;
+            margin-top: 0.9rem;
+            margin-bottom: 0;
+            padding: 0.5rem 4rem 0.5rem 0;
+            justify-content: start;
         }
-
     }
 
-    &__language {
+    &__language,
+    &__topic {
         width: min-content;
-        padding: .5rem;
+        padding: 0.5rem;
         position: relative;
         z-index: 1;
         font-style: italic;
 
         &::after {
-            content: '';
+            content: "";
             box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
-            background-color: $color-primary-0;
             width: 100%;
             height: 100%;
             position: absolute;
@@ -149,5 +154,12 @@
             z-index: -1;
             border-radius: 3px;
         }
+    }
+
+    &__language::after {
+        background-color: $color-secondary-1-3;
+    }
+    &__topic::after {
+        background-color: $color-primary-3;
     }
 }
