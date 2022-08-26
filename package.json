@@ -52,7 +52,7 @@
     "express-session": "^1.17.2",
     "helmet": "^4.6.0",
     "method-override": "^3.0.0",
-    "mongoose": "^6.0.13",
+    "mongoose": "^6.4.6",
     "style-loader": "^2.0.0",
     "wicg-inert": "^3.1.1"
   }
