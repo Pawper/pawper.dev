@@ -13,6 +13,7 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
     new CopyPlugin({
       patterns: [
+        { from: path.join(__dirname, 'src/resume'), to: path.join(__dirname, 'dist/resume') },
         { from: path.join(__dirname, 'src/humans.txt'), to: path.join(__dirname, 'dist/humans.txt') },
         { from: path.join(__dirname, 'src/robots.txt'), to: path.join(__dirname, 'dist/robots.txt') },
         { from: path.join(__dirname, 'src/sitemap.xml'), to: path.join(__dirname, 'dist/sitemap.xml') }
