@@ -1,3 +1,7 @@
+---
+categories: [featured]
+---
+
 # Pawper.dev - My portfolio site!
 
 A portfolio site is essential for any developer seeking opportunities, but to stand out I knew I had to do something above and beyond. So, I went at it with a couple goals:
